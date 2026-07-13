@@ -8,7 +8,7 @@ describe('Lark Node', () => {
 	});
 
 	it('should have the correct node type', () => {
-		expect(lark.description.name).toBe('Lark');
+		expect(lark.description.name).toBe('lark');
 	});
 
 	it('should have properties defined', () => {

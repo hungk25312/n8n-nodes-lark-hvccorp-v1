@@ -10,8 +10,9 @@ module.exports = {
 			},
 		],
 	},
-	transformIgnorePatterns: [
-		'/node_modules/(?!(sanitize-html|htmlparser2|domhandler|domutils|dom-serializer|entities|css-select|boolbase|css-what)/).+\\.js$',
-	],
+	modulePathIgnorePatterns: ['<rootDir>/dist/'],
+	moduleNameMapper: {
+		'^sanitize-html$': '<rootDir>/__mocks__/sanitize-html.js',
+	},
 	moduleFileExtensions: ['ts', 'js', 'json'],
 };

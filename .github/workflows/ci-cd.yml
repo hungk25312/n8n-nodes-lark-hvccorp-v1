@@ -40,7 +40,7 @@ jobs:
         run: npm run build
 
       - name: Test
-        run: npm test --if-present || echo "Tests skipped (ESM/CJS compat issue with sanitize-html)"
+        run: npm test
 
   release:
     needs: ci
