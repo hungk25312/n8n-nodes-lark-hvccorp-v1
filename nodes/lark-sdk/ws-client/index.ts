@@ -87,12 +87,8 @@ export class WSClient {
 			} = JSON.parse(response);
 
 			if (code !== ErrorCode.ok) {
-				this.logger.error(
-					`[ws] code: ${code}, ${code === ErrorCode.system_busy ? msg : 'system busy'}`,
-				);
-				if (code === ErrorCode.system_busy || code === ErrorCode.internal_error) {
-					return false;
-				}
+				this.logger.error(`[ws] pull config failed, code: ${code}, msg: ${msg}`);
+				return false;
 			}
 
 			const parsedUrl = new URL(connectUrl);
@@ -371,7 +367,7 @@ export class WSClient {
 
 		this.sendMessage({
 			...data,
-			headers: [...data.headers, { key: HeaderKey.biz_rt, value: String(startTime - endTime) }],
+			headers: [...data.headers, { key: HeaderKey.biz_rt, value: String(endTime - startTime) }],
 			payload: new TextEncoder().encode(JSON.stringify(respPayload)),
 		});
 	}

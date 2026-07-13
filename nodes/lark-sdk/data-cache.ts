@@ -13,10 +13,12 @@ export class DataCache {
 
 	logger?: Logger;
 
+	private cleanupTimer: ReturnType<typeof setInterval> | undefined;
+
 	constructor(params: { logger?: Logger }) {
 		this.cache = new Map();
 		this.logger = params.logger;
-		this.clearAtInterval();
+		this.startCleanupTimer();
 	}
 
 	mergeData(params: {
@@ -67,24 +69,27 @@ export class DataCache {
 		this.cache.delete(message_id);
 	}
 
-	private clearAtInterval() {
-		// magic number，10s expired
-		const clearIntervalMs = 10000;
-		setInterval(() => {
+	private startCleanupTimer() {
+		const cleanupIntervalMs = 10000;
+		this.cleanupTimer = setInterval(() => {
 			const now = Date.now();
 			this.cache.forEach((value, key) => {
 				const { create_time, trace_id, message_id } = value;
-				if (now - create_time > clearIntervalMs) {
+				if (now - create_time > cleanupIntervalMs) {
 					this.logger?.debug(
 						`${message_id} event data is deleted as expired, trace_id: ${trace_id}`,
 					);
 					this.deleteCache(key);
 				}
 			});
-		}, clearIntervalMs);
+		}, cleanupIntervalMs);
 	}
 
 	clear() {
+		if (this.cleanupTimer) {
+			clearInterval(this.cleanupTimer);
+			this.cleanupTimer = undefined;
+		}
 		this.cache.clear();
 	}
 }

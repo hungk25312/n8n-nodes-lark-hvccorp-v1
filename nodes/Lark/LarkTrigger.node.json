@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-feishu-lark.larkTrigger",
+	"node": "n8n-nodes-lark-hvccorp-v1.larkTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication"],

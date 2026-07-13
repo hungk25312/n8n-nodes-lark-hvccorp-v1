@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-feishu-lark.lark",
+	"node": "n8n-nodes-lark-hvccorp-v1.lark",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Communication", "HITL"],
