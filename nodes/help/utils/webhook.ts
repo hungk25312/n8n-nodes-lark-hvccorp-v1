@@ -437,7 +437,9 @@ export function getSendAndWaitConfig(
 
 	const responseType = NodeUtils.getNodeParameter(context, 'responseType', 'approval') as string;
 
+	// @ts-ignore - method may not exist in all n8n-workflow versions
 	if (typeof context.setSignatureValidationRequired === 'function') {
+		// @ts-ignore
 		context.setSignatureValidationRequired();
 	}
 
