@@ -10,5 +10,8 @@ module.exports = {
 			},
 		],
 	},
+	transformIgnorePatterns: [
+		'/node_modules/(?!(sanitize-html|htmlparser2|domhandler|domutils|dom-serializer|entities|css-select|boolbase|css-what)/).+\\.js$',
+	],
 	moduleFileExtensions: ['ts', 'js', 'json'],
 };
