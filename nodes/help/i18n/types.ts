@@ -6,7 +6,7 @@ export type Locale = 'en' | 'zh';
 /**
  * Default locale when N8N_DEFAULT_LOCALE is not set or invalid
  */
-export const DEFAULT_LOCALE: Locale = 'zh';
+export const DEFAULT_LOCALE: Locale = 'en';
 
 /**
  * Type definition for WORDING translations
