@@ -15,7 +15,7 @@ export default {
 		DESCRIPTIONS.CELL_RANGE,
 		DESCRIPTIONS.SEARCH_KEY,
 		{
-			displayName: 'Replacement(替换字符串)',
+			displayName: 'Replacement',
 			name: 'replacement',
 			type: 'string',
 			required: true,

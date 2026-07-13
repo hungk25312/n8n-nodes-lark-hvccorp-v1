@@ -6,7 +6,7 @@ class ResourceFactory {
 	static build(basedir: string): ResourceBuilder {
 		const resourceBuilder = new ResourceBuilder();
 		const resources: ResourceOptions[] = ModuleLoadUtils.loadModules(basedir, 'resource/*.js');
-		// 排序
+		// sort
 		resources.sort((a, b) => {
 			if (!a.order) a.order = 0;
 			if (!b.order) b.order = 0;
@@ -18,7 +18,7 @@ class ResourceFactory {
 				basedir,
 				`resource/${resource.value}/*.js`,
 			);
-			// 排序
+			// sort
 			operations.sort((a, b) => {
 				if (!a.order) a.order = 0;
 				if (!b.order) b.order = 0;

@@ -18,7 +18,7 @@ export default {
 		DESCRIPTIONS.PAGE_SIZE,
 		DESCRIPTIONS.REQUEST_BODY,
 		{
-			displayName: 'Options(选项)',
+			displayName: 'Options',
 			name: 'options',
 			type: 'collection',
 			placeholder: 'Add Field',

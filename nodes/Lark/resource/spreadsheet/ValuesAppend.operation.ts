@@ -24,18 +24,12 @@ export default {
 			default: {},
 			options: [
 				{
-					displayName: 'Insert Data Option(插入数据选项)',
+					displayName: 'Insert Data Option',
 					name: 'insertDataOption',
 					type: 'options',
 					options: [
-						{
-							name: 'Overwrite(覆盖)',
-							value: 'OVERWRITE',
-						},
-						{
-							name: 'Insert Rows(插入行)',
-							value: 'INSERT_ROWS',
-						},
+						{ name: 'Overwrite', value: 'OVERWRITE' },
+						{ name: 'Insert Rows', value: 'INSERT_ROWS' },
 					],
 					default: 'OVERWRITE',
 					description: 'Specify the way to append data',

@@ -3,49 +3,49 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '更新知识空间设置',
+	name: 'Update Wiki Space Settings',
 	value: 'updateSpaceSettings',
 	order: 98,
 	options: [
 		{
-			displayName: '知识空间ID',
+			displayName: 'Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '一级页面创建权限',
+			displayName: 'Top-Level Page Creation Permission',
 			name: 'create_setting',
 			type: 'options',
 			options: [
-				{ name: '管理员和成员', value: 'admin_and_member' },
-				{ name: '仅管理员', value: 'admin' },
+				{ name: 'Admin and Member', value: 'admin_and_member' },
+				{ name: 'Admin Only', value: 'admin' },
 			],
 			default: 'admin_and_member',
-			description: '谁可以创建空间的一级页面',
+			description: 'Who can create top-level pages in the space',
 		},
 		{
-			displayName: '文档操作权限',
+			displayName: 'Document Operation Permission',
 			name: 'security_setting',
 			type: 'options',
 			options: [
-				{ name: '允许', value: 'allow' },
-				{ name: '不允许', value: 'not_allow' },
+				{ name: 'Allow', value: 'allow' },
+				{ name: 'Not Allow', value: 'not_allow' },
 			],
 			default: 'allow',
-			description: '可阅读用户是否可创建副本/打印/导出/复制',
+			description: 'Whether users with read access can create copies/print/export/copy',
 		},
 		{
-			displayName: '评论权限',
+			displayName: 'Comment Permission',
 			name: 'comment_setting',
 			type: 'options',
 			options: [
-				{ name: '允许', value: 'allow' },
-				{ name: '不允许', value: 'not_allow' },
+				{ name: 'Allow', value: 'allow' },
+				{ name: 'Not Allow', value: 'not_allow' },
 			],
 			default: 'allow',
-			description: '可阅读用户是否可评论',
+			description: 'Whether users with read access can comment',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

@@ -3,38 +3,38 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '获取知识空间子节点列表',
+	name: 'Get Wiki Space Child Node List',
 	value: 'getSpaceNodeChildren',
 	order: 90,
 	options: [
 		{
-			displayName: '知识空间ID',
+			displayName: 'Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '父节点Token',
+			displayName: 'Parent Node Token',
 			name: 'parent_node_token',
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
 		},
 		{
-			displayName: '每页大小',
+			displayName: 'Page Size',
 			name: 'page_size',
 			type: 'number',
 			default: 20,
-			description: '分页大小，最大值50',
+			description: 'Page size, maximum value is 50',
 		},
 		{
-			displayName: '分页标记',
+			displayName: 'Page Token',
 			name: 'page_token',
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
-			description: '分页标记，第一次请求不填',
+			description: 'Page token, leave empty for the first request',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

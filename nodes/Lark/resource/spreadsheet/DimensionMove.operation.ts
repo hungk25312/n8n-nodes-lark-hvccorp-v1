@@ -16,7 +16,7 @@ export default {
 		DESCRIPTIONS.START_INDEX,
 		DESCRIPTIONS.END_INDEX,
 		{
-			displayName: 'Destination Index(目标位置)',
+			displayName: 'Destination Index',
 			name: 'destination_index',
 			type: 'number',
 			default: 0,

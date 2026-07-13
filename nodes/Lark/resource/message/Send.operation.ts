@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.RECEIVE_ID_TYPE,
 		{
 			...DESCRIPTIONS.MEMBER_ID,
-			displayName: 'Receive ID(接收 ID)',
+			displayName: 'Receive ID',
 			name: 'receive_id',
 		},
 		DESCRIPTIONS.MESSAGE_TYPE,

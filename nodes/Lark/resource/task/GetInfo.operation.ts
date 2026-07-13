@@ -3,19 +3,19 @@ import { ResourceOperation } from '../../../help/type/IResource';
 import RequestUtils from '../../../help/utils/RequestUtils';
 
 export default {
-	name: 'Get Task Info | 获取任务详情',
+	name: 'Get Task Info',
 	value: 'getInfo',
 	order: 100,
 	options: [
 		{
-			displayName: 'Task ID(任务ID)',
+			displayName: 'Task ID',
 			name: 'task_guid',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: 'User ID Type(用户 ID 类型)',
+			displayName: 'User ID Type',
 			name: 'user_id_type',
 			type: 'options',
 			options: [

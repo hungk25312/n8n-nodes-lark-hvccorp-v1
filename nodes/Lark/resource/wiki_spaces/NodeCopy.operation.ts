@@ -3,19 +3,19 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '创建知识空间节点副本',
+	name: 'Copy Wiki Space Node',
 	value: 'copySpaceNode',
 	order: 90,
 	options: [
 		{
-			displayName: '知识空间ID',
+			displayName: 'Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '节点Token',
+			displayName: 'Node Token',
 			name: 'node_token',
 			type: 'string',
 			typeOptions: { password: true },
@@ -23,26 +23,26 @@ export default {
 			default: '',
 		},
 		{
-			displayName: '目标父节点Token',
+			displayName: 'Target Parent Node Token',
 			name: 'target_parent_token',
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
-			description: '目标父节点Token，与目标知识空间ID不可同时为空',
+			description: 'Target parent node token, cannot be empty at the same time as Target Wiki Space ID',
 		},
 		{
-			displayName: '目标知识空间ID',
+			displayName: 'Target Wiki Space ID',
 			name: 'target_space_id',
 			type: 'string',
 			default: '',
-			description: '目标知识空间ID，与目标父节点Token不可同时为空',
+			description: 'Target wiki space ID, cannot be empty at the same time as Target Parent Node Token',
 		},
 		{
-			displayName: '新标题',
+			displayName: 'New Title',
 			name: 'title',
 			type: 'string',
 			default: '',
-			description: '复制后的新标题。如果填空，则新标题为空。如果不填，则使用原节点标题',
+			description: 'New title after copying. Leave empty for no title. If not provided, uses the original node title',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.SHEET_ID,
 		DESCRIPTIONS.CELL_RANGE,
 		{
-			displayName: 'Merge Type(合并类型)',
+			displayName: 'Merge Type',
 			name: 'mergeType',
 			type: 'options',
 			options: [

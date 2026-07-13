@@ -3,12 +3,12 @@ import { ResourceOperation } from '../../../help/type/IResource';
 import RequestUtils from '../../../help/utils/RequestUtils';
 
 export default {
-	name: 'Delete Task | 删除任务',
+	name: 'Delete Task',
 	value: 'delete',
 	order: 100,
 	options: [
 		{
-			displayName: 'Task ID(任务ID)',
+			displayName: 'Task ID',
 			name: 'task_guid',
 			type: 'string',
 			required: true,

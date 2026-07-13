@@ -23,7 +23,7 @@ export default {
 			default: {},
 			options: [
 				{
-					displayName: 'Inherit Style(继承样式)',
+					displayName: 'Inherit Style',
 					name: 'inheritStyle',
 					type: 'options',
 					options: [

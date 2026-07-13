@@ -23,12 +23,12 @@ export default {
 				DESCRIPTIONS.COUNT,
 				{
 					...DESCRIPTIONS.ARRAY_JSON,
-					displayName: 'Owner IDs(所有者 ID)',
+					displayName: 'Owner IDs',
 					name: 'owner_ids',
 				},
 				{
 					...DESCRIPTIONS.ARRAY_JSON,
-					displayName: 'Chat Group IDs(群组 ID)',
+					displayName: 'Chat Group IDs',
 					name: 'chat_ids',
 				},
 			],

@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.SHEET_ID,
 		DESCRIPTIONS.MAJOR_DIMENSION,
 		{
-			displayName: 'Length(长度)',
+			displayName: 'Length',
 			name: 'length',
 			type: 'number',
 			required: true,

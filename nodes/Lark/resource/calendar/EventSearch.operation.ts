@@ -18,7 +18,7 @@ export default {
 		DESCRIPTIONS.PAGE_SIZE,
 		DESCRIPTIONS.PAGE_TOKEN,
 		{
-			displayName: 'Filter(过滤器)',
+			displayName: 'Filter',
 			required: false,
 			...OBJECT_JSON,
 		},

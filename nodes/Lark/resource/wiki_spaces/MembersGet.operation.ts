@@ -3,31 +3,30 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '获取知识空间成员列表',
+	name: 'Get Wiki Space Member List',
 	value: 'getSpaceMembers',
 	order: 95,
 	options: [
 		{
-			displayName: '知识空间ID',
+			displayName: 'Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '每页大小',
+			displayName: 'Page Size',
 			name: 'page_size',
 			type: 'number',
 			default: 20,
-			description: '分页大小',
 		},
 		{
-			displayName: '分页标记',
+			displayName: 'Page Token',
 			name: 'page_token',
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
-			description: '分页标记，第一次请求不填',
+			description: 'Page token, leave empty for the first request',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

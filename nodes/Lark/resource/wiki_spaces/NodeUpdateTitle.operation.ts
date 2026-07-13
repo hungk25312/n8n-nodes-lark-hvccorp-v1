@@ -3,19 +3,19 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '更新知识空间节点标题',
+	name: 'Update Wiki Space Node Title',
 	value: 'updateSpaceNodeTitle',
 	order: 90,
 	options: [
 		{
-			displayName: '知识空间ID',
+			displayName: 'Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '节点Token',
+			displayName: 'Node Token',
 			name: 'node_token',
 			type: 'string',
 			typeOptions: { password: true },
@@ -23,12 +23,12 @@ export default {
 			default: '',
 		},
 		{
-			displayName: '新标题',
+			displayName: 'New Title',
 			name: 'title',
 			type: 'string',
 			required: true,
 			default: '',
-			description: '节点新标题',
+			description: 'New title for the node',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

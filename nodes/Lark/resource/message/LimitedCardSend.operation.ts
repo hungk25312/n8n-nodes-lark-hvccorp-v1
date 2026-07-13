@@ -20,7 +20,7 @@ export default {
 		},
 		DESCRIPTIONS.CHAT_ID,
 		{
-			displayName: 'User ID Type(用户 ID 类型)',
+			displayName: 'User ID Type',
 			name: 'user_id_type',
 			type: 'options',
 			options: [
@@ -38,7 +38,7 @@ export default {
 			default: '',
 		},
 		{
-			displayName: 'Message Card(消息卡片)',
+			displayName: 'Message Card',
 			...OBJECT_JSON,
 			name: 'message_card',
 		},

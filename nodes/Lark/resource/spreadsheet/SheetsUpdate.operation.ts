@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.SHEET_ID,
 		DESCRIPTIONS.TITLE,
 		{
-			displayName: 'Lock Sheet(锁定工作表)',
+			displayName: 'Lock Sheet',
 			name: 'lock',
 			description: 'Whether to lock the sheet',
 			type: 'boolean',
@@ -22,9 +22,8 @@ export default {
 			default: false,
 		},
 		{
-			displayName: 'Lock Info(锁定信息)',
+			displayName: 'Lock Info',
 			name: 'lockInfo',
-			description: 'Lock info',
 			type: 'string',
 			default: '',
 			displayOptions: {
@@ -42,7 +41,7 @@ export default {
 			options: [
 				DESCRIPTIONS.SHEET_INDEX,
 				{
-					displayName: 'Frozen Column Count(冻结列数)',
+					displayName: 'Frozen Column Count',
 					name: 'frozenColumnCount',
 					description: 'Column index to freeze up to. 0 means no columns are frozen.',
 					type: 'number',
@@ -53,7 +52,7 @@ export default {
 					},
 				},
 				{
-					displayName: 'Frozen Row Count(冻结行数)',
+					displayName: 'Frozen Row Count',
 					name: 'frozenRowCount',
 					description: 'Row index to freeze up to. 0 means no rows are frozen.',
 					type: 'number',
@@ -64,16 +63,15 @@ export default {
 					},
 				},
 				{
-					displayName: 'Hidden Sheet(隐藏工作表)',
+					displayName: 'Hidden Sheet',
 					name: 'hidden',
 					description: 'Whether to hide the sheet',
 					default: false,
 					type: 'boolean',
 				},
 				{
-					displayName: 'User IDs(工作表权限用户 ID)',
+					displayName: 'User IDs',
 					name: 'userIds',
-					description: 'User IDs',
 					type: 'json',
 					default: '[]',
 					displayOptions: {

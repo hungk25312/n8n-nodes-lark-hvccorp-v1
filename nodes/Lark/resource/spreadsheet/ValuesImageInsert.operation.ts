@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.SHEET_ID,
 		DESCRIPTIONS.CELL_RANGE,
 		{
-			displayName: 'Image Name(图片名称)',
+			displayName: 'Image Name',
 			name: 'name',
 			type: 'string',
 			required: true,
@@ -24,7 +24,7 @@ export default {
 				'Supported suffixes are: "PNG", "JPEG", "JPG", "GIF", "BMP", "JFIF", "EXIF", "TIFF", "BPG", "HEIC". Case insensitive.',
 		},
 		{
-			displayName: 'Image Binary Field(图片二进制字段)',
+			displayName: 'Image Binary Field',
 			name: 'image_binary_field',
 			type: 'string',
 			required: true,

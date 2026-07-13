@@ -21,19 +21,19 @@ export default {
 			default: {},
 			options: [
 				{
-					displayName: 'Value Render Option(值渲染选项)',
+					displayName: 'Value Render Option',
 					name: 'valueRenderOption',
 					type: 'options',
 					options: [
-						{ name: 'To String(返回纯文本值)', value: 'ToString' },
-						{ name: 'Formula(返回公式)', value: 'Formula' },
-						{ name: 'FormattedValue(计算并格式化单元格)', value: 'FormattedValue' },
-						{ name: 'UnformattedValue(计算但不对单元格进行格式化)', value: 'UnformattedValue' },
+						{ name: 'To String', value: 'ToString' },
+						{ name: 'Formula', value: 'Formula' },
+						{ name: 'FormattedValue', value: 'FormattedValue' },
+						{ name: 'UnformattedValue', value: 'UnformattedValue' },
 					],
 					default: 'ToString',
 				},
 				{
-					displayName: 'Date Time Render Option(日期时间渲染选项)',
+					displayName: 'Date Time Render Option',
 					name: 'dateTimeRenderOption',
 					type: 'options',
 					options: [{ name: 'FormattedString', value: 'FormattedString' }],

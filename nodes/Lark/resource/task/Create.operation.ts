@@ -4,25 +4,25 @@ import NodeUtils from '../../../help/utils/node';
 import RequestUtils from '../../../help/utils/RequestUtils';
 
 export default {
-	name: 'Create Task | 创建任务',
+	name: 'Create Task',
 	value: 'create',
 	order: 100,
 	options: [
 		{
-			displayName: 'Task Title(任务标题)',
+			displayName: 'Task Title',
 			name: 'summary',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: 'Task Description(任务摘要)',
+			displayName: 'Task Description',
 			name: 'description',
 			type: 'string',
 			default: '',
 		},
 		{
-			displayName: 'User ID Type(用户 ID 类型)',
+			displayName: 'User ID Type',
 			name: 'user_id_type',
 			type: 'options',
 			options: [
@@ -33,7 +33,7 @@ export default {
 			default: 'open_id',
 		},
 		{
-			displayName: 'Request Body(请求体)',
+			displayName: 'Request Body',
 			name: 'body',
 			type: 'json',
 			required: true,

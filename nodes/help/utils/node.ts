@@ -35,7 +35,7 @@ class NodeUtils {
 	) {
 		const binaryData = this.helpers.assertBinaryData(index, inputDataFieldName);
 		if (!binaryData) {
-			throw new Error('未找到二进制数据');
+			throw new Error('Binary data not found');
 		}
 		const buffer = await this.helpers.getBinaryDataBuffer(index, inputDataFieldName);
 

@@ -72,7 +72,7 @@ export class LarkTrigger implements INodeType {
 				default: {},
 				options: [
 					{
-						displayName: 'Subscription Docs Event(订阅云文档事件)',
+						displayName: 'Subscription Docs Event',
 						name: 'subscriptionEventsUi',
 						placeholder: 'Add New Subscription',
 						type: 'fixedCollection',
@@ -86,36 +86,36 @@ export class LarkTrigger implements INodeType {
 								displayName: 'New Subscription',
 								values: [
 									{
-										displayName: 'File Type(文件类型)',
+										displayName: 'File Type',
 										name: 'type',
 										type: 'options',
 										required: true,
 										default: 'bitable',
 										options: [
 											{
-												name: 'Bitable(多维表格)',
+												name: 'Bitable',
 												value: FileType.Bitable,
 											},
 											{
-												name: 'Docx(新版文档类型)',
+												name: 'Docx',
 												value: FileType.Docx,
 											},
 											{
-												name: 'Folder(文件夹)',
+												name: 'Folder',
 												value: FileType.Folder,
 											},
 											{
-												name: 'File(文件)',
+												name: 'File',
 												value: FileType.File,
 											},
 											{
-												name: 'Slides(幻灯片)',
+												name: 'Slides',
 												value: FileType.Slides,
 											},
 										],
 									},
 									{
-										displayName: 'File Token(文件唯一标识)',
+										displayName: 'File Token',
 										name: 'fileId',
 										required: true,
 										type: 'string',
@@ -128,14 +128,14 @@ export class LarkTrigger implements INodeType {
 						],
 					},
 					{
-						displayName: 'Unsubscribe on Deactivate | 停用时取消订阅',
+						displayName: 'Unsubscribe on Deactivate',
 						name: 'unsubscribeOnDeactivate',
 						type: 'boolean',
 						default: false,
 						description: 'Whether to unsubscribe the events on deactivation',
 					},
 					{
-						displayName: 'Callback Toast | 回调提示',
+						displayName: 'Callback Toast',
 						name: 'callbackToast',
 						type: 'string',
 						default: '',

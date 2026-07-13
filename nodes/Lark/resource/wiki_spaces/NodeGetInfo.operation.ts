@@ -3,36 +3,36 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '获取知识空间节点信息',
+	name: 'Get Wiki Space Node Info',
 	value: 'getSpaceNodeInfo',
 	order: 90,
 	options: [
 		{
-			displayName: '节点Token',
+			displayName: 'Node Token',
 			name: 'token',
 			type: 'string',
 			typeOptions: { password: true },
 			required: true,
 			default: '',
-			description: '知识库节点或对应云文档的实际token',
+			description: 'Actual token of the wiki node or its corresponding cloud document',
 		},
 		{
-			displayName: '文档类型',
+			displayName: 'Document Type',
 			name: 'obj_type',
 			type: 'options',
 			// eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items
 			options: [
-				{ name: '知识库节点', value: 'wiki' },
-				{ name: '旧版文档', value: 'doc' },
-				{ name: '新版文档', value: 'docx' },
-				{ name: '表格', value: 'sheet' },
-				{ name: '思维导图', value: 'mindnote' },
-				{ name: '多维表格', value: 'bitable' },
-				{ name: '文件', value: 'file' },
-				{ name: '幻灯片', value: 'slides' },
+				{ name: 'Wiki Node', value: 'wiki' },
+				{ name: 'Legacy Document', value: 'doc' },
+				{ name: 'New Document', value: 'docx' },
+				{ name: 'Spreadsheet', value: 'sheet' },
+				{ name: 'Mind Map', value: 'mindnote' },
+				{ name: 'Bitable', value: 'bitable' },
+				{ name: 'File', value: 'file' },
+				{ name: 'Slides', value: 'slides' },
 			],
 			default: 'wiki',
-			description: '文档类型，不传时默认以wiki类型查询',
+			description: 'Document type, defaults to wiki type if not provided',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

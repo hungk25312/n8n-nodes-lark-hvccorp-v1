@@ -3,19 +3,19 @@ import RequestUtils from '../../../help/utils/RequestUtils';
 import { ResourceOperation } from '../../../help/type/IResource';
 
 export default {
-	name: '移动知识空间节点',
+	name: 'Move Wiki Space Node',
 	value: 'moveSpaceNode',
 	order: 90,
 	options: [
 		{
-			displayName: '源知识空间ID',
+			displayName: 'Source Wiki Space ID',
 			name: 'space_id',
 			type: 'string',
 			required: true,
 			default: '',
 		},
 		{
-			displayName: '需要迁移的节点Token',
+			displayName: 'Node Token to Move',
 			name: 'node_token',
 			type: 'string',
 			typeOptions: { password: true },
@@ -23,19 +23,19 @@ export default {
 			default: '',
 		},
 		{
-			displayName: '目标父节点Token',
+			displayName: 'Target Parent Node Token',
 			name: 'target_parent_token',
 			type: 'string',
 			typeOptions: { password: true },
 			default: '',
-			description: '移动到的父节点token',
+			description: 'Parent node token to move to',
 		},
 		{
-			displayName: '目标知识空间ID',
+			displayName: 'Target Wiki Space ID',
 			name: 'target_space_id',
 			type: 'string',
 			default: '',
-			description: '移动到的知识空间ID',
+			description: 'Wiki space ID to move to',
 		},
 	],
 	async call(this: IExecuteFunctions, index: number): Promise<IDataObject> {

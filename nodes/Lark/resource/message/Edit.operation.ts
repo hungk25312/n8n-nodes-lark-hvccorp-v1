@@ -13,12 +13,12 @@ export default {
 	options: [
 		DESCRIPTIONS.MESSAGE_ID,
 		{
-			displayName: 'Message Type(消息类型)',
+			displayName: 'Message Type',
 			name: 'edit_msg_type',
 			type: 'options',
 			options: [
-				{ name: 'Rich Text(富文本)', value: 'post' },
-				{ name: 'Text(文本)', value: 'text' },
+				{ name: 'Rich Text', value: 'post' },
+				{ name: 'Text', value: 'text' },
 			],
 			required: true,
 			default: 'post',

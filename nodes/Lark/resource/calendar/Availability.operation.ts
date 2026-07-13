@@ -14,7 +14,7 @@ export default {
 		DESCRIPTIONS.USER_ID_TYPE,
 		{
 			...DESCRIPTIONS.MEMBER_ID,
-			displayName: 'User ID(用户 ID)',
+			displayName: 'User ID',
 			name: 'user_id',
 		},
 		DESCRIPTIONS.START_TIME,

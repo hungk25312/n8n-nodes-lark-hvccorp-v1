@@ -30,7 +30,7 @@ export default {
 			},
 		},
 		{
-			displayName: 'Visible(是否显示)',
+			displayName: 'Visible',
 			name: 'visible',
 			type: 'boolean',
 			default: true,
@@ -44,7 +44,7 @@ export default {
 			default: {},
 			options: [
 				{
-					displayName: 'Fixed Size(行高或列宽)',
+					displayName: 'Fixed Size',
 					name: 'fixedSize',
 					type: 'number',
 					default: 10,
