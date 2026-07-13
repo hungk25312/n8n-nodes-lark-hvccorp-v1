@@ -42,9 +42,32 @@ jobs:
       - name: Test
         run: npm test
 
+  auto-tag:
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Bump version and tag
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          npm version patch -m "Bump version to %s [skip ci]"
+          git push --follow-tags
+
   release:
     needs: ci
-    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -64,14 +87,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Bump version (manual trigger only)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          npm version ${{ github.event.inputs.release_type }} -m "Bump version to %s [skip ci]"
-          git push --follow-tags
-
       - name: Get version
         id: version
         run: echo "tag=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
@@ -81,6 +96,50 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release v${{ steps.version.outputs.tag }}
+          draft: false
+          generate_release_notes: true
+
+      - name: Publish to npm
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  release-manual:
+    needs: ci
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Bump version and tag
+        id: bump
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          npm version ${{ github.event.inputs.release_type }} -m "Bump version to %s [skip ci]"
+          git push --follow-tags
+          echo "tag=$(npm pkg get version | tr -d '"')" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.bump.outputs.tag }}
+          name: Release v${{ steps.bump.outputs.tag }}
           draft: false
           generate_release_notes: true
 
