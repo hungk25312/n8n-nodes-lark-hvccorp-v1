@@ -13,13 +13,13 @@
 		"feishu-bot"
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/phuongnh/n8n-nodes-feishu-lark#readme",
+	"homepage": "https://github.com/hungk25312/n8n-nodes-lark-hvccorp-v1#readme",
 	"author": {
 		"name": "phuongnh"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/phuongnh/n8n-nodes-feishu-lark.git"
+		"url": "git+https://github.com/hungk25312/n8n-nodes-lark-hvccorp-v1.git"
 	},
 	"engines": {
 		"node": ">=20.15"
